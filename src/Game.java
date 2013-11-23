@@ -71,7 +71,6 @@ public class Game
 			
 		}
 		turn = (turn+1) % (numPlayers+1);
-		System.out.println("The turn is now changing to : "+turn);
 	}
 	
 	public void printOpponents(int player)
@@ -108,10 +107,5 @@ public class Game
 			}
 		}
 		return -1;
-	}
-	
-	public void addFinger(int person, int hand, int number)
-	{
-		players.get(person).getHand(hand).add(number); // add "number" points to player "person" hand #"hand"
 	}
 }
