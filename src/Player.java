@@ -10,7 +10,23 @@ public class Player
 		// two hands
 		for(int numHands = 0; numHands < 2; numHands++)
 		{
-			hands.add(new Hand(this));
+			hands.add(new Hand());
+		}
+	}
+
+	public void split()
+	{
+		// can we split? (one even hand one empty hand)
+		if((hands.get(0).canSplit() && hands.get(1).getValue() == 0) ||
+			(hands.get(1).canSplit() && hands.get(0).getValue() == 0))
+		{
+			int splitPoints = (hands.get(0).getValue() + hands.get(1).getValue()) / 2;
+			hands.get(0).setValue(splitPoints);
+			hands.get(1).setValue(splitPoints);
+		}
+		else
+		{
+			System.out.println("You can't split with this configuration.");
 		}
 	}
 	

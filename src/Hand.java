@@ -1,14 +1,12 @@
 
 public class Hand
 {
-	private Player player;
 	private int value;
 	private boolean canSplit;
 	private boolean active;
 	
-	public Hand(Player p)
+	public Hand()
 	{
-		this.player = p;
 		this.value = 1;
 		this.canSplit = false;
 		this.active = true;
@@ -36,5 +34,15 @@ public class Hand
 	public int getValue()
 	{
 		return this.value;
+	}
+
+	public void setValue(int newValue)
+	{
+		this.value = newValue;
+	}
+
+	public boolean canSplit()
+	{
+		return this.canSplit;
 	}
 }
